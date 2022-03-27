@@ -1,0 +1,13 @@
+{% extends 'classapp/base.html' %}
+{% block body_block %}
+<h3>Musician Detail</h3>
+<p>{{musician.first_name}} </p>
+<h1>Album List</h1>
+{% for album in musician.album_list.all %}
+<ul>
+  <li>{{album.name}}
+</ul>
+{% endfor %}
+<a href="{% url 'classapp:musician_update' pk=musician.pk %}" class="btn btn-warning btn-sm">Update</a>
+<a href="{% url 'classapp:musician_delete' pk=musician.pk %}" class="btn btn-danger btn-sm">Delete</a>
+{% endblock %}

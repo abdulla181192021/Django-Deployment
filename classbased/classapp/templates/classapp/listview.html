@@ -1,0 +1,10 @@
+{% extends 'classapp/base.html' %}
+{% block body_block %}
+
+<ul>
+{% for i in list_of_musician %}
+  <li><a href="{% url 'classapp:musician_detail' pk=i.pk %}">{{i.first_name}} {{i.last_name}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
